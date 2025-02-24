@@ -8,3 +8,12 @@ docker run -it --rm \
     -e DISPLAY=:1 \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     rosa_image
+
+
+docker run -it --rm \
+    -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v $HOME/.Xauthority:/root/.Xauthority \
+    --device /dev/dri:/dev/dri \
+    --network=host \
+    rosa_image

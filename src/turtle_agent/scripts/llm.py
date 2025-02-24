@@ -21,6 +21,7 @@ import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
+print(os.getenv("OPENAI_API_KEY"))
 
 
 def get_llm(streaming: bool = False):
@@ -56,7 +57,7 @@ def get_llm(streaming: bool = False):
     # )
 
     load_dotenv()  # This loads the variables from .env file
-
+   
     llm = ChatOpenAI(
         model_name="gpt-4o-mini",  # or your preferred model
         temperature=0,
